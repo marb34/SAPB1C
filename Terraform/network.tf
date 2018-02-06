@@ -2,7 +2,7 @@
 resource "azurerm_virtual_network" "B1CDemo" {
   name                = "B1CDemo-Network"
   address_space       = ["10.0.0.0/16"]
-  location            = "${azurerm_resource_group.B1CDemo.location}"
+  location            = "West US"
   resource_group_name = "${azurerm_resource_group.B1CDemo.name}"
 
   subnet {

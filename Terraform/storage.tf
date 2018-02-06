@@ -20,3 +20,16 @@ resource "azurerm_storage_account" "myB1storageaccount" {
         environment = "B1 Cloud Demo"
     }
 }
+
+resource "azurerm_managed_disk" "SB1CDisk1" {
+  name = "Disk1"
+  location = "West US"
+  resource_group_name = "${azurerm_resource_group.B1CDemo.name}"
+  storage_account_type = "Standard_LRS"
+  create_option = "Empty"
+  disk_size_gb = "150"
+
+  tags {
+    environment = "staging"
+  }
+}
